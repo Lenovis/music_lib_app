@@ -1,4 +1,5 @@
 import React from 'react';
+import {StatusBar} from 'react-native';
 import styled from 'styled-components/native';
 
 type Props = {
@@ -6,10 +7,15 @@ type Props = {
 };
 
 export const Container = ({children}: Props) => {
-  return <StyledSafeAreaView>{children}</StyledSafeAreaView>;
+  return (
+    <StyledSafeAreaView>
+      <StatusBar barStyle="light-content" />
+      {children}
+    </StyledSafeAreaView>
+  );
 };
 
 const StyledSafeAreaView = styled.SafeAreaView`
   flex: 1;
-  background-color: #808080;
+  background-color: black;
 `;
