@@ -1,6 +1,11 @@
 import React from 'react';
-import {Text} from 'react-native';
+import {Text} from '../components/atoms';
+import {Container} from '../components/molecules';
 
 export const CategoryScreen = () => {
-  return <Text>Category screen</Text>;
+  return (
+    <Container>
+      <Text type="h1" text="Category screen" />
+    </Container>
+  );
 };
