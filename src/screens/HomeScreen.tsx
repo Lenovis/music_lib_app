@@ -1,6 +1,11 @@
 import React from 'react';
 import {Text} from 'react-native';
+import {Container} from '../components/molecules';
 
 export const HomeScreen = () => {
-  return <Text>Home screen</Text>;
+  return (
+    <Container>
+      <Text>Home screen</Text>
+    </Container>
+  );
 };
