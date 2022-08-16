@@ -3,9 +3,7 @@ import styled from 'styled-components/native';
 import {Song} from '../../types';
 import {Text} from '../atoms';
 
-type Props = Song;
-
-export const SongsCategoryListItem = ({title, size, duration}: Props) => {
+export const SongsCategoryListItem = ({title, size, duration}: Song) => {
   const openSongScreen = () => {
     console.log('TODO: open song screen');
   };

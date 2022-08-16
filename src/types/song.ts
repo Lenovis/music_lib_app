@@ -1,8 +1,10 @@
 export type Song = {
-  title: SongsGenre;
+  id: string;
+  title: string;
   duration: string;
   size: string;
   imageUri: string;
+  genre: SongsGenre;
 };
 
 export type SongsGenre = 'rock' | 'pop' | 'jazz' | 'classical' | 'country';

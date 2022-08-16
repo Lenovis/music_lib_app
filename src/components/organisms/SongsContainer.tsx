@@ -16,7 +16,7 @@ type Props = {
 
 export const SongsContainer = ({songGenre}: Props) => {
   const {navigate} = useNavigation<NavigationProps>();
-  const {data, error, isLoading} = useGetSongsByTypeQuery(songGenre);
+  const {data: songs, error, isLoading} = useGetSongsByTypeQuery(songGenre);
   const dispatch = useDispatch();
 
   const navigateToCategoryScreen = useCallback(() => {
@@ -27,14 +27,12 @@ export const SongsContainer = ({songGenre}: Props) => {
     return <Text text="isLoading" type={'h2'} />;
   }
 
-  if (error || !data) {
+  if (error || !songs) {
     return <Text text="error" type={'h2'} />;
   }
 
-  const {genre, songs} = data[0];
-
   const onPress = () => {
-    dispatch(setSelectedGenre(genre));
+    dispatch(setSelectedGenre(songGenre));
     navigateToCategoryScreen();
   };
 
@@ -42,7 +40,7 @@ export const SongsContainer = ({songGenre}: Props) => {
     return (
       <Container>
         <Header>
-          <Text text={SongsGenreNames[genre]} type="h1" />
+          <Text text={SongsGenreNames[songGenre]} type="h1" />
           <Button onPress={onPress} text="See all" />
         </Header>
         <SongsSwimlane>
