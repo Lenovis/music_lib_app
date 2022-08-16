@@ -1,5 +1,5 @@
 export type Song = {
-  title: string;
+  title: SongsGenre;
   duration: string;
   size: string;
   imageUri: string;

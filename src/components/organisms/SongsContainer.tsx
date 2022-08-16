@@ -1,10 +1,10 @@
-// move to organisms/SongsContainer.tsx
-
 import {useNavigation} from '@react-navigation/native';
-import React from 'react';
+import React, {useCallback} from 'react';
+import {useDispatch} from 'react-redux';
 import styled from 'styled-components/native';
 import {NavigationProps} from '../../navigation';
 import {useGetSongsByTypeQuery} from '../../state/services';
+import {setSelectedGenre} from '../../state/slices/selectedGenreSlice';
 import {SongsGenre, SongsGenreNames} from '../../types';
 import {Button, Text} from '../atoms';
 import {SongsSwimlane} from '../molecules/SongsSwimlane';
@@ -17,10 +17,11 @@ type Props = {
 export const SongsContainer = ({songGenre}: Props) => {
   const {navigate} = useNavigation<NavigationProps>();
   const {data, error, isLoading} = useGetSongsByTypeQuery(songGenre);
+  const dispatch = useDispatch();
 
-  const navigateToCategoryScreen = () => {
+  const navigateToCategoryScreen = useCallback(() => {
     navigate('CategoryScreen');
-  };
+  }, [navigate]);
 
   if (isLoading) {
     return <Text text="isLoading" type={'h2'} />;
@@ -33,6 +34,7 @@ export const SongsContainer = ({songGenre}: Props) => {
   const {genre, songs} = data[0];
 
   const onPress = () => {
+    dispatch(setSelectedGenre(genre));
     navigateToCategoryScreen();
   };
 
