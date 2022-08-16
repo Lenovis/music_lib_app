@@ -1,13 +1,9 @@
 import React from 'react';
 import styled from 'styled-components/native';
+import {Song} from '../../types';
 import {Text} from '../atoms';
 
-type Props = {
-  title: string;
-  duration: string;
-  size: string;
-  imageUri: string;
-};
+type Props = Song & {};
 
 export const SongTile = ({title, duration, size, imageUri}: Props) => {
   return (
