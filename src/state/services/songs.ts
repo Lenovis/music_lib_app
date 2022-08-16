@@ -11,7 +11,7 @@ export const songsApi = createApi({
   reducerPath: 'songsApi',
   baseQuery: fetchBaseQuery({baseUrl: 'http://localhost:3000/'}),
   endpoints: builder => ({
-    getSongsByType: builder.query<SongsQueryType[], SongsGenre>({
+    getSongsByType: builder.query<SongsQueryType[], SongsGenre | undefined>({
       query: type => `songs?genre=${type}`,
     }),
   }),
