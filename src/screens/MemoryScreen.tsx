@@ -14,6 +14,7 @@ import {RootState} from '../state/store';
 import {Song} from '../types';
 
 export const MemoryScreen = () => {
+  // TODO: paggination in the future
   const [page, setPage] = useState(1);
   const dispatch = useDispatch();
 
@@ -21,8 +22,10 @@ export const MemoryScreen = () => {
     (state: RootState) => state.memorySongs,
   );
 
+  // TODO: page prop for paggination in the future
   const {data: songs, error, isLoading} = useGetAllSongsQuery(page);
 
+  // TODO: paggination in the future
   const fetchMoreSongs = () => {
     if (!(songs && songs.length < 20)) {
       setPage(page + 1);
