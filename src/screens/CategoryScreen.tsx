@@ -3,7 +3,11 @@ import {ScrollView} from 'react-native';
 import {useSelector} from 'react-redux';
 import styled from 'styled-components/native';
 import {Text} from '../components/atoms';
-import {Container} from '../components/molecules';
+import {
+  Container,
+  ErrorScreenComponent,
+  LoadingScreenComponent,
+} from '../components/molecules';
 import {SongsCategoryListItem} from '../components/molecules/SongsCategotyListItem';
 import {useGetSongsByTypeQuery} from '../state/services';
 import {RootState} from '../state/store';
@@ -15,11 +19,11 @@ export const CategoryScreen = () => {
   const {data: songs, error, isLoading} = useGetSongsByTypeQuery(genre);
 
   if (isLoading) {
-    return <Text type="h2" text="Loading..." />;
+    return <LoadingScreenComponent />;
   }
 
   if (error || !songs || !genre) {
-    return <Text type="h2" text="Error" />;
+    return <ErrorScreenComponent />;
   }
 
   return (
