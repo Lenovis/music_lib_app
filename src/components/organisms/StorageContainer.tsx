@@ -10,13 +10,31 @@ import {StorageListItem} from '../molecules/StorageListItem';
 
 export const StorageContainer = () => {
   const {navigate} = useNavigation<NavigationProps>();
-  const {songs} = useSelector((state: RootState) => state.memorySongs);
+  const {songs: memorySongs} = useSelector(
+    (state: RootState) => state.memorySongs,
+  );
+  const {songs: filesystemSongs} = useSelector(
+    (state: RootState) => state.filesystemSongs,
+  );
 
-  const totalDuration = songs.reduce((acc, song) => acc + song.duration, 0);
-  const totalDurationFormated = songTimeFormater(totalDuration);
+  const totalMemoryDuration = memorySongs.reduce(
+    (acc, song) => acc + song.duration,
+    0,
+  );
+  const totalFilesystemDuration = filesystemSongs.reduce(
+    (acc, song) => acc + song.duration,
+    0,
+  );
+
+  const totalMemoryDurationFormated = totalMemoryDuration
+    ? songTimeFormater(totalMemoryDuration)
+    : undefined;
+  const totalFilesystemDurationFormated = totalFilesystemDuration
+    ? songTimeFormater(totalFilesystemDuration)
+    : undefined;
 
   const navigateToMemoryScreen =
-    (screen: 'FileSystemScreen' | 'MemoryScreen') => () => {
+    (screen: 'FilesystemScreen' | 'MemoryScreen') => () => {
       navigate(screen);
     };
 
@@ -25,14 +43,13 @@ export const StorageContainer = () => {
       <Text type="h1" text="Storage" />
       <StorageListItem
         text="Memory"
-        songLength={totalDurationFormated}
+        songLength={totalMemoryDurationFormated}
         onPress={navigateToMemoryScreen('MemoryScreen')}
       />
       <StorageListItem
         text="Filesystem"
-        // TODO: count the number of songs in the filesystem
-        songLength="1:00"
-        onPress={navigateToMemoryScreen('FileSystemScreen')}
+        songLength={totalFilesystemDurationFormated}
+        onPress={navigateToMemoryScreen('FilesystemScreen')}
       />
     </Container>
   );

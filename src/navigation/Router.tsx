@@ -5,7 +5,7 @@ import React from 'react';
 
 import {
   CategoryScreen,
-  FileSystemScreen,
+  FilesystemScreen,
   HomeScreen,
   MemoryScreen,
 } from '../screens';
@@ -13,7 +13,7 @@ import {
 type RootStackParamList = {
   HomeScreen: undefined;
   CategoryScreen: undefined;
-  FileSystemScreen: undefined;
+  FilesystemScreen: undefined;
   MemoryScreen: undefined;
 };
 
@@ -39,8 +39,8 @@ export const Router: React.FC = () => {
           options={{headerShown: false}}
         />
         <RootStack.Screen
-          name="FileSystemScreen"
-          component={FileSystemScreen}
+          name="FilesystemScreen"
+          component={FilesystemScreen}
           options={{headerShown: false}}
         />
         <RootStack.Screen

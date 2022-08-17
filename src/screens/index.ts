@@ -1,4 +1,4 @@
 export * from './CategoryScreen';
-export * from './FileSystemScreen';
+export * from './FilesystemScreen';
 export * from './HomeScreen';
 export * from './MemoryScreen';
