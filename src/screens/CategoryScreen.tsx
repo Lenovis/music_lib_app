@@ -12,17 +12,15 @@ import {SongsGenreNames} from '../types';
 export const CategoryScreen = () => {
   const {genre} = useSelector((state: RootState) => state.selectedGenre);
 
-  const {data, error, isLoading} = useGetSongsByTypeQuery(genre);
+  const {data: songs, error, isLoading} = useGetSongsByTypeQuery(genre);
 
   if (isLoading) {
     return <Text type="h2" text="Loading..." />;
   }
 
-  if (error || !data || !genre) {
+  if (error || !songs || !genre) {
     return <Text type="h2" text="Error" />;
   }
-
-  const {songs} = data[0];
 
   return (
     <Container>

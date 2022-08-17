@@ -5,7 +5,7 @@ import Icon from 'react-native-vector-icons/Feather';
 
 type Props = {
   text: string;
-  songLength: string;
+  songLength?: string;
   onPress: () => void;
 };
 
@@ -14,7 +14,7 @@ export const StorageListItem = ({text, songLength, onPress}: Props) => {
     <Container onPress={onPress}>
       <Text text={text} type="h2" />
       <InfoContainer>
-        <Text text={songLength} type="h3" />
+        {songLength && <Text text={songLength} type="h3" />}
         <Icon name="chevron-right" size={20} color="#fff" />
       </InfoContainer>
     </Container>

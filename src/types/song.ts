@@ -1,11 +1,19 @@
 export type Song = {
-  title: SongsGenre;
-  duration: string;
+  id: string;
+  title: string;
+  duration: number;
   size: string;
   imageUri: string;
+  genre: SongsGenre;
 };
 
-export type SongsGenre = 'rock' | 'pop' | 'jazz' | 'classical' | 'country';
+export type SongsGenre =
+  | 'rock'
+  | 'pop'
+  | 'jazz'
+  | 'classical'
+  | 'country'
+  | 'podcast';
 
 export enum SongsGenreNames {
   rock = 'Rock',
@@ -13,4 +21,5 @@ export enum SongsGenreNames {
   jazz = 'Jazz',
   classical = 'Classical',
   country = 'Country',
+  podcast = 'Podcast',
 }
