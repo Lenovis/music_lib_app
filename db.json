@@ -1,10 +1,10 @@
 {
-  "genres": ["jazz", "pop", "rock", "classical", "country"],
+  "genres": ["jazz", "pop", "rock", "classical", "country", "podcast"],
   "allSongs": [
     {
       "id": 1,
       "title": "Jazz in Paris - The Essential",
-      "duration": "2m 40s",
+      "duration": 160,
       "size": "10MB",
       "imageUri": "https://picsum.photos/200/300",
       "genre": "jazz"
@@ -12,7 +12,7 @@
     {
       "id": 2,
       "title": "Jazz of Harlem - The Essential",
-      "duration": "2m 15s",
+      "duration": 125,
       "size": "9MB",
       "imageUri": "https://picsum.photos/200/300",
       "genre": "jazz"
@@ -20,7 +20,7 @@
     {
       "id": 3,
       "title": "Sound of Jazz - The Essential",
-      "duration": "3m 24s",
+      "duration": 120,
       "size": "13MB",
       "imageUri": "https://picsum.photos/200/300",
       "genre": "jazz"
@@ -28,7 +28,7 @@
     {
       "id": 4,
       "title": "Jazz in America - The Essential",
-      "duration": "2m 40s",
+      "duration": 45,
       "size": "10MB",
       "imageUri": "https://picsum.photos/200/300",
       "genre": "jazz"
@@ -36,7 +36,7 @@
     {
       "id": 5,
       "title": "Just another Jazz Song - The Essential",
-      "duration": "2m 15s",
+      "duration": 135,
       "size": "9MB",
       "imageUri": "https://picsum.photos/200/300",
       "genre": "jazz"
@@ -44,7 +44,7 @@
     {
       "id": 6,
       "title": "Jazz in the USA - The Essential",
-      "duration": "3m 24s",
+      "duration": 201,
       "size": "13MB",
       "imageUri": "https://picsum.photos/200/300",
       "genre": "jazz"
@@ -52,7 +52,7 @@
     {
       "id": 7,
       "title": "Rock in Paris - The Essential",
-      "duration": "2m 40s",
+      "duration": 160,
       "size": "10MB",
       "imageUri": "https://picsum.photos/200/300",
       "genre": "rock"
@@ -60,7 +60,7 @@
     {
       "id": 8,
       "title": "Rock of Harlem - The Essential",
-      "duration": "2m 15s",
+      "duration": 135,
       "size": "9MB",
       "imageUri": "https://picsum.photos/200/300",
       "genre": "rock"
@@ -68,7 +68,7 @@
     {
       "id": 9,
       "title": "Sound of Rock - The Essential",
-      "duration": "3m 24s",
+      "duration": 204,
       "size": "13MB",
       "imageUri": "https://picsum.photos/200/300",
       "genre": "rock"
@@ -76,7 +76,7 @@
     {
       "id": 10,
       "title": "Rock in America - The Essential",
-      "duration": "2m 40s",
+      "duration": 200,
       "size": "10MB",
       "imageUri": "https://picsum.photos/200/300",
       "genre": "rock"
@@ -84,7 +84,7 @@
     {
       "id": 11,
       "title": "Just another Rock Song - The Essential",
-      "duration": "2m 15s",
+      "duration": 135,
       "size": "9MB",
       "imageUri": "https://picsum.photos/200/300",
       "genre": "rock"
@@ -92,7 +92,7 @@
     {
       "id": 12,
       "title": "Rock in the USA - The Essential",
-      "duration": "3m 24s",
+      "duration": 201,
       "size": "13MB",
       "imageUri": "https://picsum.photos/200/300",
       "genre": "rock"
@@ -100,7 +100,7 @@
     {
       "id": 13,
       "title": "Classical in Paris - The Essential",
-      "duration": "2m 40s",
+      "duration": 160,
       "size": "10MB",
       "imageUri": "https://picsum.photos/200/300",
       "genre": "classical"
@@ -108,7 +108,7 @@
     {
       "id": 14,
       "title": "Classical of Harlem - The Essential",
-      "duration": "2m 15s",
+      "duration": 135,
       "size": "9MB",
       "imageUri": "https://picsum.photos/200/300",
       "genre": "classical"
@@ -116,7 +116,7 @@
     {
       "id": 15,
       "title": "Sound of Classical - The Essential",
-      "duration": "3m 24s",
+      "duration": 201,
       "size": "13MB",
       "imageUri": "https://picsum.photos/200/300",
       "genre": "classical"
@@ -124,7 +124,7 @@
     {
       "id": 16,
       "title": "Classical in America - The Essential",
-      "duration": "2m 40s",
+      "duration": 160,
       "size": "10MB",
       "imageUri": "https://picsum.photos/200/300",
       "genre": "classical"
@@ -132,7 +132,7 @@
     {
       "id": 17,
       "title": "Just another Classical Song - The Essential",
-      "duration": "2m 15s",
+      "duration": 135,
       "size": "9MB",
       "imageUri": "https://picsum.photos/200/300",
       "genre": "classical"
@@ -140,7 +140,7 @@
     {
       "id": 18,
       "title": "Classical in the USA - The Essential",
-      "duration": "3m 24s",
+      "duration": 201,
       "size": "13MB",
       "imageUri": "https://picsum.photos/200/300",
       "genre": "classical"
@@ -148,7 +148,7 @@
     {
       "id": 19,
       "title": "Country in Paris - The Essential",
-      "duration": "2m 40s",
+      "duration": 160,
       "size": "10MB",
       "imageUri": "https://picsum.photos/200/300",
       "genre": "country"
@@ -156,7 +156,7 @@
     {
       "id": 20,
       "title": "Country of Harlem - The Essential",
-      "duration": "2m 15s",
+      "duration": 135,
       "size": "9MB",
       "imageUri": "https://picsum.photos/200/300",
       "genre": "country"
@@ -164,7 +164,7 @@
     {
       "id": 21,
       "title": "Sound of Country - The Essential",
-      "duration": "3m 24s",
+      "duration": 201,
       "size": "13MB",
       "imageUri": "https://picsum.photos/200/300",
       "genre": "country"
@@ -172,7 +172,7 @@
     {
       "id": 22,
       "title": "Country in America - The Essential",
-      "duration": "2m 40s",
+      "duration": 160,
       "size": "10MB",
       "imageUri": "https://picsum.photos/200/300",
       "genre": "country"
@@ -180,7 +180,7 @@
     {
       "id": 23,
       "title": "Just another Country Song - The Essential",
-      "duration": "2m 15s",
+      "duration": 135,
       "size": "9MB",
       "imageUri": "https://picsum.photos/200/300",
       "genre": "country"
@@ -188,7 +188,7 @@
     {
       "id": 24,
       "title": "Country in the USA - The Essential",
-      "duration": "3m 24s",
+      "duration": 201,
       "size": "13MB",
       "imageUri": "https://picsum.photos/200/300",
       "genre": "country"
@@ -196,7 +196,7 @@
     {
       "id": 25,
       "title": "Pop in Paris - The Essential",
-      "duration": "2m 40s",
+      "duration": 160,
       "size": "10MB",
       "imageUri": "https://picsum.photos/200/300",
       "genre": "pop"
@@ -204,7 +204,7 @@
     {
       "id": 26,
       "title": "Pop of Harlem - The Essential",
-      "duration": "2m 15s",
+      "duration": 135,
       "size": "9MB",
       "imageUri": "https://picsum.photos/200/300",
       "genre": "pop"
@@ -212,7 +212,7 @@
     {
       "id": 27,
       "title": "Sound of Pop - The Essential",
-      "duration": "3m 24s",
+      "duration": 201,
       "size": "13MB",
       "imageUri": "https://picsum.photos/200/300",
       "genre": "pop"
@@ -220,7 +220,7 @@
     {
       "id": 28,
       "title": "Pop in America - The Essential",
-      "duration": "2m 40s",
+      "duration": 160,
       "size": "10MB",
       "imageUri": "https://picsum.photos/200/300",
       "genre": "pop"
@@ -228,7 +228,7 @@
     {
       "id": 29,
       "title": "Just another Pop Song - The Essential",
-      "duration": "2m 15s",
+      "duration": 135,
       "size": "9MB",
       "imageUri": "https://picsum.photos/200/300",
       "genre": "pop"
@@ -236,7 +236,7 @@
     {
       "id": 30,
       "title": "Pop in the USA - The Essential",
-      "duration": "3m 24s",
+      "duration": 201,
       "size": "13MB",
       "imageUri": "https://picsum.photos/200/300",
       "genre": "pop"
@@ -244,10 +244,18 @@
     {
       "id": 31,
       "title": "Pop in Paris - The Essential 2",
-      "duration": "2m 40s",
+      "duration": 160,
       "size": "10MB",
       "imageUri": "https://picsum.photos/200/300",
       "genre": "pop"
+    },
+    {
+      "id": 32,
+      "title": "Talk about this app creator",
+      "duration": 4000,
+      "size": "100MB",
+      "imageUri": "https://picsum.photos/200/300",
+      "genre": "podcast"
     }
   ]
 }

@@ -1,11 +1,13 @@
 import React from 'react';
 import styled from 'styled-components/native';
+import {songTimeFormater} from '../../helpers';
 import {Song} from '../../types';
 import {Text} from '../atoms';
 
 type Props = Song & {};
 
 export const SongTile = ({title, duration, size, imageUri}: Props) => {
+  const durationFormated = songTimeFormater(duration);
   return (
     <Container>
       <Image
@@ -17,7 +19,7 @@ export const SongTile = ({title, duration, size, imageUri}: Props) => {
         <Text numberOfLines={2} type="h2" text={title} />
         <SongInfoContainer>
           <Text text={size} type="h3" />
-          <Text text={duration} type="h3" />
+          <Text text={durationFormated} type="h3" />
         </SongInfoContainer>
       </TextContainer>
     </Container>

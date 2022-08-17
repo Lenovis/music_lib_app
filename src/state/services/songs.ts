@@ -8,7 +8,12 @@ export const songsApi = createApi({
     getSongsByType: builder.query<Song[], SongsGenre | undefined>({
       query: type => `allSongs?genre=${type}`,
     }),
+    // TODO: find a way to use propper pagination
+    getAllSongs: builder.query<Song[], number | void>({
+      // query: (page = 1) => `allSongs?_page=${page}&_limit=20`,
+      query: (page = 1) => 'allSongs',
+    }),
   }),
 });
 
-export const {useGetSongsByTypeQuery} = songsApi;
+export const {useGetSongsByTypeQuery, useGetAllSongsQuery} = songsApi;
