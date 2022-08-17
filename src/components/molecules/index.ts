@@ -4,3 +4,4 @@ export * from './SongsSwimlane';
 export * from './StorageListItem';
 export * from './LoadingScreenComponent';
 export * from './ErrorScreenComponent';
+export * from './MemoryScreenFlatList';

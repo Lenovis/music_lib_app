@@ -1,11 +1,11 @@
 import React, {useState} from 'react';
-import {FlatList} from 'react-native';
 import {useDispatch, useSelector} from 'react-redux';
 import {Text} from '../components/atoms';
 import {
   Container,
   ErrorScreenComponent,
   LoadingScreenComponent,
+  MemoryScreenFlatList,
 } from '../components/molecules';
 import {SongsCategoryListItem} from '../components/molecules/SongsCategotyListItem';
 import {useGetAllSongsQuery} from '../state/services';
@@ -55,8 +55,7 @@ export const MemoryScreen = () => {
   return (
     <Container>
       <Text type="h1" text="Memory" />
-      <FlatList
-        contentContainerStyle={{flexGrow: 1}}
+      <MemoryScreenFlatList
         data={songs}
         renderItem={({item}) => {
           return (
@@ -68,9 +67,7 @@ export const MemoryScreen = () => {
             />
           );
         }}
-        onEndReachedThreshold={0.2}
         onEndReached={fetchMoreSongs}
-        showsVerticalScrollIndicator={false}
       />
     </Container>
   );

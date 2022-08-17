@@ -1,11 +1,11 @@
 import React, {useState} from 'react';
-import {FlatList} from 'react-native';
 import {useDispatch, useSelector} from 'react-redux';
 import {Text} from '../components/atoms';
 import {
   Container,
   ErrorScreenComponent,
   LoadingScreenComponent,
+  MemoryScreenFlatList,
 } from '../components/molecules';
 import {SongsCategoryListItem} from '../components/molecules/SongsCategotyListItem';
 import {useGetAllSongsQuery} from '../state/services';
@@ -14,15 +14,19 @@ import {RootState} from '../state/store';
 import {Song} from '../types';
 
 export const FilesystemScreen = () => {
+  // TODO: paggination in the future
   const [page, setPage] = useState(1);
+
   const dispatch = useDispatch();
 
   const {songs: savedSongs} = useSelector(
     (state: RootState) => state.filesystemSongs,
   );
 
+  // TODO: page prop for paggination in the future
   const {data: songs, error, isLoading} = useGetAllSongsQuery(page);
 
+  // TODO: paggination in the future
   const fetchMoreSongs = () => {
     if (!(songs && songs.length < 20)) {
       setPage(page + 1);
@@ -55,8 +59,7 @@ export const FilesystemScreen = () => {
   return (
     <Container>
       <Text type="h1" text="Memory" />
-      <FlatList
-        contentContainerStyle={{flexGrow: 1}}
+      <MemoryScreenFlatList
         data={songs}
         renderItem={({item}) => {
           return (
@@ -68,9 +71,7 @@ export const FilesystemScreen = () => {
             />
           );
         }}
-        onEndReachedThreshold={0.2}
         onEndReached={fetchMoreSongs}
-        showsVerticalScrollIndicator={false}
       />
     </Container>
   );
