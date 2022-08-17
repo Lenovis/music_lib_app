@@ -1,7 +1,10 @@
 import React from 'react';
 import {ScrollView} from 'react-native';
-import {Text} from '../components/atoms';
-import {Container} from '../components/molecules';
+import {
+  Container,
+  ErrorScreenComponent,
+  LoadingScreenComponent,
+} from '../components/molecules';
 import {SongsContainer, StorageContainer} from '../components/organisms';
 import {useGenresQuery} from '../state/services';
 
@@ -9,11 +12,11 @@ export const HomeScreen = () => {
   const {data, error, isLoading} = useGenresQuery();
 
   if (isLoading) {
-    return <Text type="h2" text="Loading..." />;
+    return <LoadingScreenComponent />;
   }
 
   if (error || !data) {
-    return <Text type="h2" text="Error" />;
+    return <ErrorScreenComponent />;
   }
 
   return (

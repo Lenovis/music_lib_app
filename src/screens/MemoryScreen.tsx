@@ -2,7 +2,11 @@ import React, {useState} from 'react';
 import {FlatList} from 'react-native';
 import {useDispatch, useSelector} from 'react-redux';
 import {Text} from '../components/atoms';
-import {Container} from '../components/molecules';
+import {
+  Container,
+  ErrorScreenComponent,
+  LoadingScreenComponent,
+} from '../components/molecules';
 import {SongsCategoryListItem} from '../components/molecules/SongsCategotyListItem';
 import {useGetAllSongsQuery} from '../state/services';
 import {addSong, removeSong} from '../state/slices/memorySongsSlice';
@@ -26,11 +30,11 @@ export const MemoryScreen = () => {
   };
 
   if (isLoading) {
-    return <Text type="h2" text="Loading..." />;
+    return <LoadingScreenComponent />;
   }
 
   if (error || !songs) {
-    return <Text type="h2" text="Error" />;
+    return <ErrorScreenComponent />;
   }
 
   const saveSong = (song: Song) => () => {

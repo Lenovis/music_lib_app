@@ -16,19 +16,15 @@ type Props = {
 
 export const SongsContainer = ({songGenre}: Props) => {
   const {navigate} = useNavigation<NavigationProps>();
-  const {data: songs, error, isLoading} = useGetSongsByTypeQuery(songGenre);
+  const {data: songs, error} = useGetSongsByTypeQuery(songGenre);
   const dispatch = useDispatch();
 
   const navigateToCategoryScreen = useCallback(() => {
     navigate('CategoryScreen');
   }, [navigate]);
 
-  if (isLoading) {
-    return <Text text="isLoading" type={'h2'} />;
-  }
-
   if (error || !songs) {
-    return <Text text="error" type={'h2'} />;
+    return null;
   }
 
   const onPress = () => {
